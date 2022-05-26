@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+        <div class="row">
+            <div class="d-flex flex-column justify-content-center">
+                <h1 data-aos="fade-up"><i>Veb saytların hazırlanması</i></h1>
+                <h2 data-aos="fade-up" data-aos-delay="400"><span>Öz Biznesinizi onlayn məkanda tanıtmaq üçün bizim peşəkar komandanın xidmətlərindən yararlana bilərsiz.Bizim missiyamız ən müasir texnoloji həllər ilə VEB səhifələrin hazırlanmasıdır.</span></h2>
+                <h4 class="pt-3" data-aos="fade-up" data-aos-delay="500">İşiniz İşimizdir!</h4>
+                <div data-aos="fade-up" data-aos-delay="600">
+                    <div class="">
+                        <a href="{% url 'contact' %}" target="blank_"
+                            class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center rounded">
+                            <span>Bizə Müraciət Edin</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section><!-- End Hero -->
+
+<main id="main">
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h3>Xİdmətlər</h3>
+                <p>Təklif etdiyimiz xidmətlər xüsusi olaraq və bütün texnoloji ehtiyaclar nəzərə alınaraq
+                    formalaşdırılmışdır.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="box" data-aos="fade-up" data-aos-delay="200">
+                        <img src="{% static 'img/services-1.png' %}" class="img-fluid" alt="">
+                        <h3>Saytların Hazırlanması</h3>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="box" data-aos="fade-up" data-aos-delay="400">
+                        <img src="{% static 'img/services-2.png' %}" class="img-fluid" alt="">
+                        <h3>Server Nəzarəti və hostings</h3>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="box" data-aos="fade-up" data-aos-delay="600">
+                        <img src="{% static 'img/services-3.png' %}" class="img-fluid" alt="" style="padding: 30px 15px 10px 15px;">
+                                         <h3 class="pt-0">Texniki dəstək</h3>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="box" data-aos="fade-up" data-aos-delay="200">
+                        <img src="{% static 'img/services-4.png' %}" class="img-fluid" alt="">
+                        <h3>Seo Xidmeti</h3>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="box" data-aos="fade-up" data-aos-delay="400">
+                        <img src="{% static 'img/services-5.png' %}" class="img-fluid" alt="">
+                        <h3>Dizayn xidməti</h3>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="box" data-aos="fade-up" data-aos-delay="600">
+                        <img src="{% static 'img/services-6.jpg' %}" class="img-fluid" alt="">
+                        <h3>SMM Xİdməti</h3>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- End Values Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h3>Son İşlərimiz</h3>
+            </div>
+
+            <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+                {% for project in last_projects %}
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="portfolio-wrap">
+                        <img src="{{project.picture.url}}" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <a href="#"><h4>{{project.name}}</h4></a>
+                            <div class="portfolio-links">
+                                <a href="{{project.picture.url}}" data-gallery="portfolioGallery"
+                                    class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            <div class="text-center mt-5">
+                <a href="{% url 'all_projects' %}" class="btn-portfolio">Bütün işlərə bax</a>
+            </div>
+
+        </div>
+
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h3>Qiymətlər</h3>
+                <p>Təklif etdiyimiz xidmətlər xüsusi olaraq və bütün texnoloji ehtiyaclar nəzərə alınaraq
+                    formalaşdırılmışdır.
+                </p>
+            </div>
+
+            <div class="row gy-4 col-center" data-aos="fade-left">
+
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="box">
+                        <div class="box-header silver">
+                            <h3>Silver Paket</h3>
+                        </div>
+                        <div class="price"><sup>$</sup>0</span></div>
+                        <img src="assets/img/pricing-free.png" class="img-fluid" alt="">
+                        <table class="table">
+                            <tr>
+                                <th style="text-align: left;">Texniki dəstək</th>
+                                <td>3 ay</td>
+                            </tr>
+                            <tr>
+                                <th>Mobil Versiya</th>
+                                <td>Var</td>
+                            </tr>
+                            <tr>
+                                <th>İdarə paneli</th>
+                                <td>CMS</td>
+                            </tr>
+                            <tr>
+                                <th>Seo Optimizasiya</th>
+                                <td>Daxili</td>
+                            </tr>
+                        </table>
+                        <div>
+                            <a href="#" class="btn-buy btn-silver">Sifariş et</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="box">
+                        <div class="box-header gold">
+                            <h3>Gold Paket</h3>
+                        </div>
+                        <div class="price"><sup>$</sup>0</span></div>
+                        <img src="assets/img/pricing-free.png" class="img-fluid" alt="">
+                        <table class="table">
+                            <tr>
+                                <th style="text-align: left;">Texniki dəstək</th>
+                                <td>3 ay</td>
+                            </tr>
+                            <tr>
+                                <th>Mobil Versiya</th>
+                                <td>Var</td>
+                            </tr>
+                            <tr>
+                                <th>İdarə paneli</th>
+                                <td>CMS</td>
+                            </tr>
+                            <tr>
+                                <th>Seo Optimizasiya</th>
+                                <td>Daxili</td>
+                            </tr>
+                        </table>
+                        <a href="#" class="btn-buy btn-gold">Buy Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="box">
+                        <div class="box-header premium">
+                            <h3>Premium Paket</h3>
+                        </div>
+                        <div class="price"><sup>$</sup>0</span></div>
+                        <img src="assets/img/pricing-free.png" class="img-fluid" alt="">
+                        <table class="table">
+                            <tr>
+                                <th style="text-align: left;">Texniki dəstək</th>
+                                <td>3 ay</td>
+                            </tr>
+                            <tr>
+                                <th>Mobil Versiya</th>
+                                <td>Var</td>
+                            </tr>
+                            <tr>
+                                <th>İdarə paneli</th>
+                                <td>CMS</td>
+                            </tr>
+                            <tr>
+                                <th>Seo Optimizasiya</th>
+                                <td>Daxili</td>
+                            </tr>
+                        </table>
+                        <a href="#" class="btn-buy btn-premium">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- End Pricing Section -->
+
+</main><!-- End #main -->
+
+{% endblock %}
